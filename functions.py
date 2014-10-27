@@ -9,8 +9,8 @@ def query(select, host=""):
     except:
         print "Error al configurar desde el archivo config.yml. Existe el archivo?"
 
-    if host:
-        config.host = host
+    if host != "":
+        config['host'] = host
 
     try:
         conn = psycopg2.connect("dbname=%(database)s user=%(user)s password=%(password)s host=%(host)s" % config)

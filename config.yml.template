@@ -1,5 +1,8 @@
-# Necesitas crear la base de datos y el usuario y renombrar a config.yml
+# Necesitas crear el usuario, la base de datos y renombrar a config.yml
+# create role checkeruser with login password '12345678';
+# create database checkertest with owner checkeruser;
+
 database: checkertest
 host: localhost
-user: test
+user: checkeruser
 password: 12345678
