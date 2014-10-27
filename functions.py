@@ -1,7 +1,7 @@
 import psycopg2
 import yaml
 
-def query(select, host=""):
+def query(select, host="", port=""):
     try:
         filename = 'config.yml'
         stream = file(filename, 'r')
@@ -9,11 +9,15 @@ def query(select, host=""):
     except:
         print "Error al configurar desde el archivo config.yml. Existe el archivo?"
 
-    if host != "":
+    if host:
         config['host'] = host
 
+    if port:
+        config['port'] = port
+
     try:
-        conn = psycopg2.connect("dbname=%(database)s user=%(user)s password=%(password)s host=%(host)s" % config)
+        conn = psycopg2.connect("dbname=%(database)s user=%(user)s password=%(password)s "
+        "host=%(host)s port=%(port)s" % config)
         cur = conn.cursor()
         cur.execute(select)
         conn.commit()

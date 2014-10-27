@@ -4,5 +4,6 @@
 
 database: checkertest
 host: localhost
+port: 5432
 user: checkeruser
 password: 12345678
