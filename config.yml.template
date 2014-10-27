@@ -1,0 +1,5 @@
+# Necesitas crear la base de datos y el usuario y renombrar a config.yml
+database: checkertest
+host: localhost
+user: test
+password: 12345678
